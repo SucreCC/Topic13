@@ -158,3 +158,92 @@ cython_debug/
 #  and can be added to the global gitignore or merged into this file.  For a more nuclear
 #  option (not recommended) you can uncomment the following to ignore the entire idea folder.
 #.idea/
+
+
+
+
+# General LaTeX intermediate files
+*.aux
+*.bbl
+*.blg
+*.brf
+*.fls
+*.log
+*.fdb_latexmk
+*.synctex.gz
+*.lof
+*.lot
+*.out
+*.toc
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.maf
+*.mtc
+*.mtc0
+*.idx
+*.ind
+*.ilg
+*.nlo
+*.nls
+*.xdy
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.ps
+*.thm
+*.pre
+*.spl
+*.bcf
+*.run.xml
+# Directories produced by latexmk
+/_minted-*/
+
+# Output files
+# *.pdf
+# Remove this line if you want to track the PDF
+
+# Latexindent
+*.latexindent.log
+*.latexindent
+
+# Temporary files
+*.tmp
+*.bak
+*.sav
+
+# TeX auxiliary files from other packages
+*.auxlock
+*.loa
+
+# VS Code LaTeX Workshop extension
+*.latexmain
+
+# TeXstudio
+*.txss
+
+# Ignore TeXShop files
+*.tsv
+*.synctex(busy)
+*.synctex.gz(busy)
+
+# Ignore TeXworks backup files
+*.tec
+
+# R related
+*.Rhistory
+*.Rapp.history
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
