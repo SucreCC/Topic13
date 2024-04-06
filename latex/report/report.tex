@@ -44,7 +44,8 @@
 \hypersetup{
     colorlinks=true,
     linkcolor=blue, % 设置链接颜色为蓝色
-    urlcolor=blue % 设置网址颜色为蓝色
+    urlcolor=blue, % 设置网址颜色为蓝色
+    citecolor=black
 }
 
 \pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
@@ -96,7 +97,7 @@
 
 \section{Introduction}
 Biological neural networks are the complex systems of neurons and their connections in organisms, crucial for processing and transmitting information, enabling perception, decision-making, and behavior. Modeling these networks through computational frameworks aims to replicate their structure and function, shedding light on how information processing leads to complex cognitive functions and behaviors. 
-In the fllowing we will do (summarize what you have done)
+In the fllowing we will show you how Modeling Biological Neural Networks workds.
 
 
 \section{Background Context}
@@ -192,8 +193,58 @@ To generate spikes according to a Poisson point process, generate a random numbe
 
 
 
-\subsection{Carbon-based to silicon-based}
-The Hodgkin–Huxley model, or conductance-based model, is a mathematical model that describes how action potentials in neurons are initiated and propagated. It is a set of nonlinear differential equations that approximates the electrical engineering characteristics of excitable cells such as neurons and muscle cells. It is a continuous-time dynamical system.
+
+
+
+\section{Historical Models}
+
+\subsection{The M-P model}
+Since the Spanish anatomist Cajal founded the neuron theory at the end of the 19th century, the biological characteristics and related electrical properties of neurons have been discovered one after another. In 1943, the M-P model of neurons (shown in Figure 1.4) was first proposed in the paper "Logical Activities of Thoughts Contained in Neural Activities" \cite{Mcculloch1854LOGICALCALCULUSIDEAS}. The model was created by psychologists W.S. McCulloch and W.S. McCulloch from the United States. Another mathematician, W.A. Pitts.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{./data/M-P.jpg}
+    \caption{Schematic diagram of the M-P model of neurons}
+    \label{fig:my_picture}
+    \vspace{1pt} % Vertical space, optional
+\end{figure}
+
+In the figure, $x_i$, 1, 2, ..., represents the input signal transmitted from other neurons connected to the current neuron, $w_{ij}$ represents the connection strength or weight from neuron j to neuron i, $\theta_i$ is the neuron The activation threshold or bias of the element, f is called the activation function or transfer function. The output of the neuron $y_i$ can be expressed as follows:
+
+\begin{equation}
+    y_i = f(\sum_{j=i}^{n} w_{ij}x_j-\theta_i)
+\end{equation}
+
+This model describes neurons from the perspective of logical functional devices, opening up a path for theoretical research on neural networks. The M-P model is a mathematical simplification of the biological neuron information processing model, and subsequent neural network research work is based on it. 
+
+
+
+\subsection{Hebb learning rules}
+In 1949, in the book "The Organization of Behavior", the psychologist Donald O. Hebb analyzed the change rules of the connection strength between neurons, and based on this, he proposed the famous Hebb learning rule \cite{Hebb2002OrganizationBehaviorNeuropsychological}. Inspired by Pavlov's conditioned reflex experiments, Hebb believed that if two neurons are fired at the same moment, the connection between them should be strengthened. The Hebb learning rule defined based on this is as follows:
+
+\begin{equation}
+    w_{ij}(t + 1) = w_{ij}(t) + \alpha y_j(t)y_i
+\end{equation}
+
+Among them, $w_{ij}(t+1)$ and $w_{ij}(t)$ represent the connection strength between neuron j and neuron i at time t and t + 1 respectively, while $y_i$ and $y_j$ are the outputs of neurons i and j.
+
+
+Hebb's rule belongs to the category of unsupervised learning algorithms. Its main idea is to adjust the connection relationship between two neurons according to their excitation state, so as to realize the simulation of simple neural activities. Following the Hebb learning rule, the supervised delta learning rule of neurons was proposed to solve the learning problem of neuron weights when the input and output are known. This algorithm continuously adjusts the connection weights to make the actual output of the neuron consistent with the expected output. Its learning correction formula is as follows
+
+
+\begin{equation}
+    w_{ij}(t + 1) = w_{ij}(t) + \alpha(d_i - y_i)x_j(t)
+\end{equation}
+
+Among them, $\alpha$ is the learning rate of the algorithm, $d_i$ and $y_i$ are the expected output and actual output of neuron i, $x_j{t}$represents the state (activation or inhibition) of neuron j at time t.
+
+Intuitively speaking, when the actual output of neuron i is greater than the expected output, the connection weight with the activated neuron is reduced, and the connection weight with the inhibited neuron is increased; when the actual output of neuron i is greater than the expected output If it is small, the connection weight with activated neurons will be increased, while the connection weight with inhibited neurons will be reduced. Through such an adjustment process, neurons will store the correct mapping relationship between input and output in the weight, thus possessing the ability to represent data. The Hebb learning rule and the Delta learning rule are both proposed for a single neuron. The learning rules for parameters in a network composed of neurons will be discussed later. The research work done by the above pioneers paved the way for the emergence of neural computing and inspired many scholars to continue exploring and researching this field.
+
+
+
+
+\subsection{Hodgkin–Huxley model}
+The Hodgkin–Huxley model, or conductance-based model, is a mathematical model that describes how action potentials in neurons are initiated and propagated \cite{A.L.Hodgkin1952QuantitativeDescriptionMembrane}. It is a set of nonlinear differential equations that approximates the electrical engineering characteristics of excitable cells such as neurons and muscle cells. It is a continuous-time dynamical system.
 
 \vspace{10pt}
 The typical Hodgkin–Huxley model treats each component of an excitable cell as an electrical element (as shown in the figure). The lipid bilayer is represented as a capacitance (\(C_m\)). Voltage-gated ion channels are represented by electrical conductances (\(g_n\), where \(n\) is the specific ion channel) that depend on both voltage and time. Leak channels are represented by linear conductances (\(g_L\)). The electrochemical gradients driving the flow of ions are represented by voltage sources (\(E_n\)) whose voltages are determined by the ratio of the intra- and extracellular concentrations of the ionic species of interest. Finally, ion pumps are represented by current sources (\(I_p\)).
@@ -239,63 +290,10 @@ Where:
 
 The time-dependent elements of this equation are \( V_{m} \), \( g_{Na} \), and \( g_{K} \), where the last two conductances depend explicitly on the membrane voltage (\( V_{m} \)) as well.
 
+\subsection{Mark I perceptron}
 
 
-
-
-
-
-
-
-
-\section{Historical Models}
-
-\subsection{Stage 1 -- The M-P model}
-Since the Spanish anatomist Cajal founded the neuron theory at the end of the 19th century, the biological characteristics and related electrical properties of neurons have been discovered one after another. In 1943, the M-P model of neurons (shown in Figure 1.4) was first proposed in the paper "Logical Activities of Thoughts Contained in Neural Activities" \cite{Mcculloch1854LOGICALCALCULUSIDEAS}. The model was created by psychologists W.S. McCulloch and W.S. McCulloch from the United States. Another mathematician, W.A. Pitts.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{./data/M-P.jpg}
-    \caption{Schematic diagram of the M-P model of neurons}
-    \label{fig:my_picture}
-    \vspace{1pt} % Vertical space, optional
-    \small{Source: Draw by Kai}
-\end{figure}
-
-In the figure, $x_i$, 1, 2, ..., represents the input signal transmitted from other neurons connected to the current neuron, $w_{ij}$ represents the connection strength or weight from neuron j to neuron i, $\theta_i$ is the neuron The activation threshold or bias of the element, f is called the activation function or transfer function. The output of the neuron $y_i$ can be expressed as follows:
-
-\begin{equation}
-    y_i = f(\sum_{j=i}^{n} w_{ij}x_j-\theta_i)
-\end{equation}
-
-
-This model describes neurons from the perspective of logical functional devices, opening up a path for theoretical research on neural networks. The M-P model is a mathematical simplification of the biological neuron information processing model, and subsequent neural network research work is based on it. 
-
-\subsection{Stage 2 -- Hebb learning rules and Delta learning rules}
-In 1949, in the book "The Organization of Behavior", the psychologist Donald O. Hebb analyzed the change rules of the connection strength between neurons, and based on this, he proposed the famous Hebb learning rule \cite{Hebb2002OrganizationBehaviorNeuropsychological}. Inspired by Pavlov's conditioned reflex experiments, Hebb believed that if two neurons are fired at the same moment, the connection between them should be strengthened. The Hebb learning rule defined based on this is as follows:
-
-\begin{equation}
-    w_{ij}(t + 1) = w_{ij}(t) + \alpha y_j(t)y_i
-\end{equation}
-
-Among them, $w_{ij}(t+1)$ and $w_{ij}(t)$ represent the connection strength between neuron j and neuron i at time t and t + 1 respectively, while $y_i$ and $y_j$ are the outputs of neurons i and j.
-
-
-Hebb's rule belongs to the category of unsupervised learning algorithms. Its main idea is to adjust the connection relationship between two neurons according to their excitation state, so as to realize the simulation of simple neural activities. Following the Hebb learning rule, the supervised delta learning rule of neurons was proposed to solve the learning problem of neuron weights when the input and output are known. This algorithm continuously adjusts the connection weights to make the actual output of the neuron consistent with the expected output. Its learning correction formula is as follows
-
-
-\begin{equation}
-    w_{ij}(t + 1) = w_{ij}(t) + \alpha(d_i - y_i)x_j(t)
-\end{equation}
-
-Among them, $\alpha$ is the learning rate of the algorithm, $d_i$ and $y_i$ are the expected output and actual output of neuron i, $x_j{t}$represents the state (activation or inhibition) of neuron j at time t.
-
-Intuitively speaking, when the actual output of neuron i is greater than the expected output, the connection weight with the activated neuron is reduced, and the connection weight with the inhibited neuron is increased; when the actual output of neuron i is greater than the expected output If it is small, the connection weight with activated neurons will be increased, while the connection weight with inhibited neurons will be reduced. Through such an adjustment process, neurons will store the correct mapping relationship between input and output in the weight, thus possessing the ability to represent data. The Hebb learning rule and the Delta learning rule are both proposed for a single neuron. The learning rules for parameters in a network composed of neurons will be discussed later. The research work done by the above pioneers paved the way for the emergence of neural computing and inspired many scholars to continue exploring and researching this field.
-
-\subsection{Stage 3 -- Mark I perceptron}
-
-
-In 1958, F. Rosenblatt invented the perceptron model (Perceptron), which was the first model in history to introduce the concept of neural networks into electronic computer processing, marking a new stage in the development of neural networks. The perceptron is a binary linear classification model that determines the output of a two-class model by weighted summation of the input features followed by an activation function. The activation function is a step function, used to determine whether the input value is positive or negative. The mathematical representation of the perceptron model is as follows, where \( x \) represents the input vector, \( w \) represents the weight vector, \( b \) represents the bias term, and \( y \) is the output value, which can be \(+1\) or \(-1\), with the mathematical representation being:
+In 1958, F. Rosenblatt invented the perceptron model (Perceptron), which was the first model in history to introduce the concept of neural networks into electronic computer processing, marking a new stage in the development of neural networks \cite{Rosenblatt1958PerceptronProbabilisticModel}. The perceptron is a binary linear classification model that determines the output of a two-class model by weighted summation of the input features followed by an activation function. The activation function is a step function, used to determine whether the input value is positive or negative. The mathematical representation of the perceptron model is as follows, where \( x \) represents the input vector, \( w \) represents the weight vector, \( b \) represents the bias term, and \( y \) is the output value, which can be \(+1\) or \(-1\), with the mathematical representation being:
 
 
 \begin{equation}
@@ -360,9 +358,37 @@ b = \sum_{i=1}^{n} a_i y_i
 
 where \( a_i = \eta n_i \), and \( n_i \) is the number of times the perceptron misclassified the \( i \)-th example. The perceptron algorithm is named after the psychologist Frank Rosenblatt, who, along with engineers B. Widrow and M. Hoff, adapted the ADALINE (ADAptive LINear Element) from the model of the same name developed by H. Steinbuch.
 
+\subsection{Delta learning rules}
 
-\subsection{Stage 4 -- Hopfield neural network model}
-The next significant advancement in the field of neural networks occurred in 1969 when M. Minsky and S. Papert pointed out the limitations of the perceptron in their book "Perceptrons," demonstrating that it was incapable of processing the XOR problem. However, this criticism also motivated further research into neural networks with additional layers, leading to the development of multilayer networks. The key breakthrough was the introduction of the "backpropagation" algorithm that enabled the training of multilayer networks.
+The basic idea of the delta learning rule is to reduce the difference between the network output and the target output by continuously adjusting the network weights. It determines the adjustment direction and size of the weight by calculating the gradient of the error. At each iteration, the weights are adjusted slightly in the opposite direction of the gradient to gradually reduce the error.
+A common delta learning rule is a variant of the delta rule, called the delta rule or Widrow-Hoff rule \cite{BernardWidrow1960AdaptiveSwitchingCircuits}. This rule is based on the perceptron model and updates the weights based on the difference between the actual output and the desired output. The size of the update depends on the size of the input signal as well as the error signal.
+
+The Delta learning rule, also known as the Widrow-Hoff rule, is a simple algorithm used for adjusting the weights of connections in a neural network during training. The formula for updating the weights in the Delta learning rule is as follows:
+
+\[ \Delta w_{ij} = \eta \cdot (d_j - y_j) \cdot x_i \]
+
+Where:
+
+\begin{itemize}
+    \item \textbf{ $\Delta w_{ij}$:} is the change in weight between neuron \( i \) and neuron \( j \).
+    \item \textbf{$\eta $:} is the learning rate, which controls the step size of the weight update.
+    \item \textbf{ $d_{j}$:} is the target output for neuron \( j \).
+    \item \textbf{$y_j$:} is the actual output of neuron \( j \).
+    \item \textbf{$x_i$:} is the input from neuron \( i \) to neuron \( j \).
+\end{itemize}
+
+This formula calculates the change in weight \( \Delta w_{ij} \) based on the error between the target output \( d_j \) and the actual output \( y_j \), multiplied by the input \( x_i \) and the learning rate \( \eta \). The weight update is applied to all connections in the network during each training iteration.
+
+
+Delta learning rules are widely used in neural network training, especially in supervised learning tasks such as classification and regression. It provides an effective method for neural networks to automatically adjust weights to gradually improve the performance and accuracy of the network.
+
+
+
+
+
+
+\subsection{Hopfield neural network model}
+The next significant advancement in the field of neural networks occurred in 1969 when M. Minsky and S \cite{JJHopfield1982NeuralNetworksPhysical}. Papert pointed out the limitations of the perceptron in their book "Perceptrons," demonstrating that it was incapable of processing the XOR problem. However, this criticism also motivated further research into neural networks with additional layers, leading to the development of multilayer networks. The key breakthrough was the introduction of the "backpropagation" algorithm that enabled the training of multilayer networks.
 
 A single-layer perceptron can only solve problems linearly separable because it is essentially a linear classifier. It was realized that to overcome the limitations of the perceptron and solve non-linearly separable problems, one must utilize multilayer networks and non-linear activation functions. The first step in this direction was taken by introducing the concept of a neural network capable of associative memory, which led to the invention of the Hopfield network by J.J. Hopfield in 1982.
 
@@ -400,9 +426,9 @@ The Hopfield network is a recurrent neural network, which is to say, it possesse
 
 Hopfield's paper not only triggered the renaissance of interest in neural networks but also led to the exploration of new types of neural networks. One significant development in this area was the Boltzmann machine, introduced by G.E. Hinton, T.J. Sejnowski, and D.H. Ackley in 1983. This machine was an extension of the Hopfield network and could solve problems that Hopfield networks could not.
 
-\subsection{Stage 5 -- Boltzmann machine}
+\subsection{Boltzmann machine}
 
-A Boltzmann machine is similar to a Hopfield network in that it is a network of units with a global energy function. However, unlike the Hopfield network, a Boltzmann machine has stochastic units and operates based on probabilistic rather than deterministic rules. This means that a Boltzmann machine can escape from local minima, a feature that is particularly beneficial when dealing with optimization problems.
+A Boltzmann machine is similar to a Hopfield network in that it is a network of units with a global energy function \cite{G.E.Hinton1986LearningAndfRelearning}. However, unlike the Hopfield network, a Boltzmann machine has stochastic units and operates based on probabilistic rather than deterministic rules. This means that a Boltzmann machine can escape from local minima, a feature that is particularly beneficial when dealing with optimization problems.
 
 A special case of the Boltzmann machine is the Restricted Boltzmann Machine (RBM), which constrains the connections between units to form a bipartite graph. This constraint simplifies the learning algorithm and makes it more efficient. RBMs have found a wide range of applications, particularly in the development of deep learning algorithms. For instance, they can be used to pre-train the layers of a deep neural network, improving the efficiency and effectiveness of the training process.
 
