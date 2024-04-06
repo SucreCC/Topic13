@@ -18,7 +18,7 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
-\documentclass[paper=a4, fontsize=11pt]{scrartcl} % A4 paper and 11pt font size
+\documentclass[12pt,a4paper]{report}
 
 \usepackage[T1]{fontenc} % Use 8-bit encoding that has 256 glyphs
 \usepackage{fourier} % Use the Adobe Utopia font for the document - comment this line to return to the LaTeX default
@@ -54,62 +54,64 @@
 \usepackage{xcolor}
 \usepackage{amsmath}
 
-\pagestyle{fancyplain} % Makes all pages in the document conform to the custom headers and footers
-\fancyhead{} % No page header - if you want one, create it in the same way as the footers below
-\fancyfoot[L]{} % Empty left footer
-\fancyfoot[C]{} % Empty center footer
-\fancyfoot[R]{\thepage} % Page numbering for right footer
-\renewcommand{\headrulewidth}{0pt} % Remove header underlines
-\renewcommand{\footrulewidth}{0pt} % Remove footer underlines
-\setlength{\headheight}{13.6pt} % Customize the height of the header
 
-\numberwithin{equation}{section} % Number equations within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
-\numberwithin{figure}{section} % Number figures within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
-\numberwithin{table}{section} % Number tables within sections (i.e. 1.1, 1.2, 2.1, 2.2 instead of 1, 2, 3, 4)
-
-\setlength\parindent{0pt} % Removes all indentation from paragraphs - comment this line for an assignment with lots of text
-\setlength{\parindent}{5mm}
-%----------------------------------------------------------------------------------------
-%	TITLE SECTION
-%----------------------------------------------------------------------------------------
-
-\newcommand{\horrule}[1]{\rule{\linewidth}{#1}} % Create horizontal rule command with 1 argument of height
-
-\title{	
-\normalfont \normalsize 
-\textsc{University College cork} \\ [25pt] % Your university, school and/or department name(s)
-\horrule{0.5pt} \\[0.4cm] % Thin top horizontal rule
-\huge Modeling Biological Neural Networks \\ % The assignment title
-\horrule{2pt} \\[0.5cm] % Thick bottom horizontal rule
-}
-
-\author{Kai Deng} % Your name
-
-\date{\normalsize\today} % Today's date or a custom date
-
-% 参考
-
-% https://zhuanlan.zhihu.com/p/66585918
-% https://www.jiqizhixin.com/articles/spiking-neurons
 
 \setlength{\abovecaptionskip}{10pt} % 设置图注上方的间隔为5pt
 \setlength{\belowcaptionskip}{10pt} % 设置图注下方的间隔为-10pt
 
-\begin{document}
-\maketitle % Print the title
 
-\tableofcontents
+\begin{document}
+% \maketitle % Print the title
+
+
+\begin{titlepage} \vspace{1cm}
+
+    \begin{center}
+    \textbf{\Huge Modelling Biological Neural Networks}
+    \end{center}
+    
+    \vspace{1.5cm}
+    
+    \begin{center}
+    \textbf{\LARGE Ananthakrishnan Sumedan \#1 \\ Kai Deng \#2\\ Laurel Dsouza \#3}{\LARGE\par}
+    \end{center}
+    
+    \vfill{}
+    
+    \begin{center}
+    {\Large AM3064/AM6015 Written Report}
+    \par\end{center}
+    
+    \vspace{1cm}
+    
+    \begin{center}
+    \Large{School of Mathematical Sciences \\
+    University College Cork \\
+    Ireland \\
+    6 April 2024}
+    \end{center}
+    
+\end{titlepage}
+
+This report is wholly the work of the author, except where explicitly
+stated otherwise. The source of any material which was not created
+by the author has been clearly cited. \\
+\medskip{}
+
+Date: 6 April
+
+\medskip{}
+
+Signature: Ananthakrishnan Sumedan, Kai Deng, Laurel Dsouza
+
+\tableofcontents{}
+
 \clearpage
 
-\section{Introduction}
-Biological neural networks are the complex systems of neurons and their connections in organisms, crucial for processing and transmitting information, enabling perception, decision-making, and behavior. Modeling these networks through computational frameworks aims to replicate their structure and function, shedding light on how information processing leads to complex cognitive functions and behaviors. 
-In the fllowing we will show you how Modeling Biological Neural Networks workds.
-
-
-\section{Background Context}
+\chapter{Background Concept}
+\section{Anatomy of a Neuron}
 Neurons are cells — small bodies of mostly water, ions, amino acids and proteins with remarkable electrochemical properties. They are the primary functional units of the brain. Our mental experiences — our perceptions, memories, and thoughts — are the result of the ebb and flow of salts across neural bi-lipid membranes and the synaptic transmissions between neurons. 
 
-\subsection{Anatomy of a Neuron}
 Neurons receive signals from other neurons through synapses located – not exclusively – on their dendritic tree, which is a complex, branching, sprawling structure. If you are wondering what the king of dendritic complexity is, that would be the Purkinje cell, which may receive up to 100,000 other connections. Dendrites are studded with dendritic spines – little bumps where other neurons make contact with the dendrite.
 
 \vspace{10pt}
@@ -129,10 +131,9 @@ Coming off the soma is the axon hillock which turns into the axon. The axon meet
 \end{figure}
 
 
-\subsection{Physiology of a Neuron}
-\paragraph{The}
+\section{Physiology of a Neuron}
 
- second thing to appreciate about neurons is their specialized physiology — that is the cellular functions of neurons. The most striking feature of neural cellular function is the action potential. This is the mechanism which allows neurons to transmit information reliably over long distances without the transmission attenuating.
+The second thing to appreciate about neurons is their specialized physiology — that is the cellular functions of neurons. The most striking feature of neural cellular function is the action potential. This is the mechanism which allows neurons to transmit information reliably over long distances without the transmission attenuating.
 
 \vspace{10pt}
 It is important to remember that neurons bathe in an extracellular solution of mostly water, salts and proteins. The forces caused by the movement of salts into and out of the cell and the different concentrations of these salts is the physical basis of the neuron’s remarkable behavior. There are sodium-potassium pumps which move sodium out of the cell and potassium in, so that the concentration of sodium outside the cell is higher than inside and the concentration of potassium outside the cell is lower then inside.
@@ -175,7 +176,7 @@ The action potential is the result of different species of ions traveling across
 
 
 
-\subsection{Spike train}
+\section{Spike train}
 
 Spike trains are the language of neurons. People tend to think of spikes as point-events and spike trains as point-processe. We describe these with the neural response function:
 
@@ -197,14 +198,14 @@ Often, it is useful for analysis to assume spike trains are generated by random 
 
 To generate spikes according to a Poisson point process, generate a random number r in a sufficiently small time interval, such that only 1 spike should occur, and check whethe $r < firingRate \Delta T$. However, make sure that $firingRate\Delta T < 1$.
 
+\section{Biological Neural Networks}
+Biological neural networks are the complex systems of neurons and their connections in organisms, crucial for processing and transmitting information, enabling perception, decision-making, and behavior. Modeling these networks through computational frameworks aims to replicate their structure and function, shedding light on how information processing leads to complex cognitive functions and behaviors. 
+Understanding neurons and neural computation can provide biological inspiration for new ways to process information and for artificial intelligence.
 
 
+\chapter{Modelling History}
 
-
-
-\section{Historical Models}
-
-\subsection{The M-P model}
+\section{The M-P model}
 Since the Spanish anatomist Cajal founded the neuron theory at the end of the 19th century, the biological characteristics and related electrical properties of neurons have been discovered one after another. In 1943, the M-P model of neurons (shown in Figure 1.4) was first proposed in the paper "Logical Activities of Thoughts Contained in Neural Activities" \cite{Mcculloch1854LOGICALCALCULUSIDEAS}. The model was created by psychologists W.S. McCulloch and W.S. McCulloch from the United States. Another mathematician, W.A. Pitts.
 
 \begin{figure}[H]
@@ -223,9 +224,11 @@ In the figure, $x_i$, 1, 2, ..., represents the input signal transmitted from ot
 
 This model describes neurons from the perspective of logical functional devices, opening up a path for theoretical research on neural networks. The M-P model is a mathematical simplification of the biological neuron information processing model, and subsequent neural network research work is based on it. 
 
+The Mp model gets inspiration from threshold theory in nerve impulses and Applies it in logical neurons and it builds a groundwork for the development of more complex activation functions used in neural networks today.
 
 
-\subsection{Hebb learning rules}
+
+\section{Hebb learning rules}
 In 1949, in the book "The Organization of Behavior", the psychologist Donald O. Hebb analyzed the change rules of the connection strength between neurons, and based on this, he proposed the famous Hebb learning rule \cite{Hebb2002OrganizationBehaviorNeuropsychological}. Inspired by Pavlov's conditioned reflex experiments, Hebb believed that if two neurons are fired at the same moment, the connection between them should be strengthened. The Hebb learning rule defined based on this is as follows:
 
 \begin{equation}
@@ -247,60 +250,37 @@ Among them, $\alpha$ is the learning rate of the algorithm, $d_i$ and $y_i$ are 
 Intuitively speaking, when the actual output of neuron i is greater than the expected output, the connection weight with the activated neuron is reduced, and the connection weight with the inhibited neuron is increased; when the actual output of neuron i is greater than the expected output If it is small, the connection weight with activated neurons will be increased, while the connection weight with inhibited neurons will be reduced. Through such an adjustment process, neurons will store the correct mapping relationship between input and output in the weight, thus possessing the ability to represent data. The Hebb learning rule and the Delta learning rule are both proposed for a single neuron. The learning rules for parameters in a network composed of neurons will be discussed later. The research work done by the above pioneers paved the way for the emergence of neural computing and inspired many scholars to continue exploring and researching this field.
 
 
+\section{Delta learning rules}
 
+The basic idea of the delta learning rule is to reduce the difference between the network output and the target output by continuously adjusting the network weights. It determines the adjustment direction and size of the weight by calculating the gradient of the error. At each iteration, the weights are adjusted slightly in the opposite direction of the gradient to gradually reduce the error.
+A common delta learning rule is a variant of the delta rule, called the delta rule or Widrow-Hoff rule \cite{BernardWidrow1960AdaptiveSwitchingCircuits}. This rule is based on the perceptron model and updates the weights based on the difference between the actual output and the desired output. The size of the update depends on the size of the input signal as well as the error signal.
 
-\subsection{Hodgkin–Huxley model}
-The Hodgkin–Huxley model, or conductance-based model, is a mathematical model that describes how action potentials in neurons are initiated and propagated \cite{A.L.Hodgkin1952QuantitativeDescriptionMembrane}. It is a set of nonlinear differential equations that approximates the electrical engineering characteristics of excitable cells such as neurons and muscle cells. It is a continuous-time dynamical system.
+The Delta learning rule, also known as the Widrow-Hoff rule, is a simple algorithm used for adjusting the weights of connections in a neural network during training. The formula for updating the weights in the Delta learning rule is as follows:
 
-\vspace{10pt}
-The typical Hodgkin–Huxley model treats each component of an excitable cell as an electrical element (as shown in the figure). The lipid bilayer is represented as a capacitance (\(C_m\)). Voltage-gated ion channels are represented by electrical conductances (\(g_n\), where \(n\) is the specific ion channel) that depend on both voltage and time. Leak channels are represented by linear conductances (\(g_L\)). The electrochemical gradients driving the flow of ions are represented by voltage sources (\(E_n\)) whose voltages are determined by the ratio of the intra- and extracellular concentrations of the ionic species of interest. Finally, ion pumps are represented by current sources (\(I_p\)).
-
-\begin{figure}[h]
-    \centering
-    \includegraphics[width=0.9\textwidth]{./data/Hodgkin-Huxley.png}
-    \caption{Typical Hodgkin–Huxley model}
-    \label{fig:my_picture}
-    \vspace{1pt} % Vertical space, optional
-    \small{Source: \href{https://en.wikipedia.org/wiki/Hodgkin%E2%80%93Huxley_model}{Wikipedia}}
-\end{figure}
-
-\vspace{10pt}
-Mathematically, the current flowing through the lipid bilayer is written as:
-
-\begin{equation}
-    I_{c} = C_{m} \frac{dV_{m}}{dt} 
-\end{equation}
-
-The current through a specific ion channel:
-\begin{equation}
-    I_{i} = g_{i} (V_{m} - V_{i}) 
-\end{equation}
-
-
-For a cell with sodium and potassium channels, the total membrane current per unit area (I) is given by:
-
-\begin{equation}
-    I = C_{m} \frac{dV_{m}}{dt} + g_{K} (V_{m} - V_{K}) + g_{Na} (V_{m} - V_{Na}) + g_{l} (V_{m} - V_{l})
-\end{equation}
-
+\[ \Delta w_{ij} = \eta \cdot (d_j - y_j) \cdot x_i \]
 
 Where:
 
 \begin{itemize}
-    \item \textbf{ I:} is the total membrane current per unit area.
-    \item \textbf{$C_{m}$:} is the membrane capacitance per unit area.
-    \item \textbf{ $g_{K}$ and $g_{Na}$:} are the potassium and sodium conductances per unit area, respectively.
-    \item \textbf{$V_{K}$ and $V_{Na}$:} are the potassium and sodium reversal potentials, respectively.
-    \item \textbf{$g_{l}$ and $V_{l}$:} are the potassium and sodium reversal potentials, respectively.
+    \item \textbf{ $\Delta w_{ij}$:} is the change in weight between neuron \( i \) and neuron \( j \).
+    \item \textbf{$\eta $:} is the learning rate, which controls the step size of the weight update.
+    \item \textbf{ $d_{j}$:} is the target output for neuron \( j \).
+    \item \textbf{$y_j$:} is the actual output of neuron \( j \).
+    \item \textbf{$x_i$:} is the input from neuron \( i \) to neuron \( j \).
 \end{itemize}
 
-The time-dependent elements of this equation are \( V_{m} \), \( g_{Na} \), and \( g_{K} \), where the last two conductances depend explicitly on the membrane voltage (\( V_{m} \)) as well.
+This formula calculates the change in weight \( \Delta w_{ij} \) based on the error between the target output \( d_j \) and the actual output \( y_j \), multiplied by the input \( x_i \) and the learning rate \( \eta \). The weight update is applied to all connections in the network during each training iteration.
 
-\subsection{Mark I perceptron}
 
+Delta learning rules are widely used in neural network training, especially in supervised learning tasks such as classification and regression. It provides an effective method for neural networks to automatically adjust weights to gradually improve the performance and accuracy of the network.
+
+Both Hebb learning rules and Delta learning rules provide a certain foundation and inspiration for the development of backpropagation algorithm.
+
+
+
+\section{Mark I perceptron}
 
 In 1958, F. Rosenblatt invented the perceptron model (Perceptron), which was the first model in history to introduce the concept of neural networks into electronic computer processing, marking a new stage in the development of neural networks \cite{Rosenblatt1958PerceptronProbabilisticModel}. The perceptron is a binary linear classification model that determines the output of a two-class model by weighted summation of the input features followed by an activation function. The activation function is a step function, used to determine whether the input value is positive or negative. The mathematical representation of the perceptron model is as follows, where \( x \) represents the input vector, \( w \) represents the weight vector, \( b \) represents the bias term, and \( y \) is the output value, which can be \(+1\) or \(-1\), with the mathematical representation being:
-
 
 \begin{equation}
     y = f(x) = \text{sign}(w \cdot x + b)
@@ -364,36 +344,8 @@ b = \sum_{i=1}^{n} a_i y_i
 
 where \( a_i = \eta n_i \), and \( n_i \) is the number of times the perceptron misclassified the \( i \)-th example. The perceptron algorithm is named after the psychologist Frank Rosenblatt, who, along with engineers B. Widrow and M. Hoff, adapted the ADALINE (ADAptive LINear Element) from the model of the same name developed by H. Steinbuch.
 
-\subsection{Delta learning rules}
 
-The basic idea of the delta learning rule is to reduce the difference between the network output and the target output by continuously adjusting the network weights. It determines the adjustment direction and size of the weight by calculating the gradient of the error. At each iteration, the weights are adjusted slightly in the opposite direction of the gradient to gradually reduce the error.
-A common delta learning rule is a variant of the delta rule, called the delta rule or Widrow-Hoff rule \cite{BernardWidrow1960AdaptiveSwitchingCircuits}. This rule is based on the perceptron model and updates the weights based on the difference between the actual output and the desired output. The size of the update depends on the size of the input signal as well as the error signal.
-
-The Delta learning rule, also known as the Widrow-Hoff rule, is a simple algorithm used for adjusting the weights of connections in a neural network during training. The formula for updating the weights in the Delta learning rule is as follows:
-
-\[ \Delta w_{ij} = \eta \cdot (d_j - y_j) \cdot x_i \]
-
-Where:
-
-\begin{itemize}
-    \item \textbf{ $\Delta w_{ij}$:} is the change in weight between neuron \( i \) and neuron \( j \).
-    \item \textbf{$\eta $:} is the learning rate, which controls the step size of the weight update.
-    \item \textbf{ $d_{j}$:} is the target output for neuron \( j \).
-    \item \textbf{$y_j$:} is the actual output of neuron \( j \).
-    \item \textbf{$x_i$:} is the input from neuron \( i \) to neuron \( j \).
-\end{itemize}
-
-This formula calculates the change in weight \( \Delta w_{ij} \) based on the error between the target output \( d_j \) and the actual output \( y_j \), multiplied by the input \( x_i \) and the learning rate \( \eta \). The weight update is applied to all connections in the network during each training iteration.
-
-
-Delta learning rules are widely used in neural network training, especially in supervised learning tasks such as classification and regression. It provides an effective method for neural networks to automatically adjust weights to gradually improve the performance and accuracy of the network.
-
-
-
-
-
-
-\subsection{Hopfield neural network model}
+\section{Hopfield neural network model}
 The next significant advancement in the field of neural networks occurred in 1969 when M. Minsky and S \cite{JJHopfield1982NeuralNetworksPhysical}. Papert pointed out the limitations of the perceptron in their book "Perceptrons," demonstrating that it was incapable of processing the XOR problem. However, this criticism also motivated further research into neural networks with additional layers, leading to the development of multilayer networks. The key breakthrough was the introduction of the "backpropagation" algorithm that enabled the training of multilayer networks.
 
 A single-layer perceptron can only solve problems linearly separable because it is essentially a linear classifier. It was realized that to overcome the limitations of the perceptron and solve non-linearly separable problems, one must utilize multilayer networks and non-linear activation functions. The first step in this direction was taken by introducing the concept of a neural network capable of associative memory, which led to the invention of the Hopfield network by J.J. Hopfield in 1982.
@@ -432,18 +384,10 @@ The Hopfield network is a recurrent neural network, which is to say, it possesse
 
 Hopfield's paper not only triggered the renaissance of interest in neural networks but also led to the exploration of new types of neural networks. One significant development in this area was the Boltzmann machine, introduced by G.E. Hinton, T.J. Sejnowski, and D.H. Ackley in 1983. This machine was an extension of the Hopfield network and could solve problems that Hopfield networks could not.
 
-\subsection{Boltzmann machine}
 
-A Boltzmann machine is similar to a Hopfield network in that it is a network of units with a global energy function \cite{G.E.Hinton1986LearningAndfRelearning}. However, unlike the Hopfield network, a Boltzmann machine has stochastic units and operates based on probabilistic rather than deterministic rules. This means that a Boltzmann machine can escape from local minima, a feature that is particularly beneficial when dealing with optimization problems.
+\chapter{Hodgkin-Huxley Model}
 
-A special case of the Boltzmann machine is the Restricted Boltzmann Machine (RBM), which constrains the connections between units to form a bipartite graph. This constraint simplifies the learning algorithm and makes it more efficient. RBMs have found a wide range of applications, particularly in the development of deep learning algorithms. For instance, they can be used to pre-train the layers of a deep neural network, improving the efficiency and effectiveness of the training process.
-
-The collaborative work of Hinton and his colleagues on Boltzmann machines and the development of efficient training algorithms have played a vital role in the evolution of neural networks. Their work has paved the way for the deep learning revolution, which is now at the forefront of artificial intelligence research and applications.
-
-
-
-\section{Hodgkin-Huxley Model}
-\subsection{Introduction}
+\section{Introduction}
 
 The Hodgkin-Huxley model, proposed by Sir Alan Hodgkin and Sir Andrew Huxley in 1952, revolutionized the field of neuroscience by providing a quantitative understanding of the generation and propagation of action potentials in neurons. This mathematical framework emerged from a decade-long collaboration between Hodgkin and Huxley, culminating in the publication of their landmark papers in the Journal of Physiology.
 
@@ -451,11 +395,11 @@ The Hodgkin-Huxley model, proposed by Sir Alan Hodgkin and Sir Andrew Huxley in 
 
 The Hodgkin-Huxley theory emerged as a result of a remarkable collaboration between Hodgkin and Huxley from the late 1930s to the early 1950s. Their work was informed by several key experimental findings. Cole and Curtis demonstrated that the action potential is associated with a significant increase in membrane conductance, laying the groundwork for understanding neuronal excitability\cite{Cole1939}. Subsequently, Hodgkin and Huxley performed the first intracellular recording of an action potential, revealing that the membrane potential during an action potential exceeds zero mV, thereby challenging existing hypotheses\cite{Hodgkin1939}. This experimental breakthrough was complemented by the theoretical insights of Hodgkin and Katz, who explained the overshooting action potential by elucidating the role of sodium permeability\cite{Hodgkin1949}. Additionally, Hodgkin, Huxley, and Katz developed a voltage-clamp circuit, following the pioneering work of Cole and Marmont, enabling precise measurement of ionic currents in squid axons\cite{Hausser2000}.
 
-\subsection{Biological Basis of Neuronal Excitability}
+\section{Biological Basis of Neuronal Excitability}
 
 Neuronal excitability, the ability of neurons to generate and transmit electrical signals, is fundamental to their function in the nervous system. This excitability arises from the intricate interplay of ion channels and the dynamic changes in membrane potential they produce.
 
-\subsubsection{Resting Membrane Potential}
+\subsection{Resting Membrane Potential}
 
 The resting membrane potential of a neuron, typically ranging from -60 mV to -70 mV, is maintained by the selective permeability of the cell membrane to different ions. This selective permeability is primarily mediated by resting ion channels, particularly those permeable to potassium ions. At rest, these channels allow a small efflux of K+ ions, establishing the negative charge within the cell compared to the extracellular space.
 
@@ -466,19 +410,19 @@ The resting membrane potential of a neuron, typically ranging from -60 mV to -70
     \label{fig:resting_membrane_potential}
 \end{figure}
 
-\subsubsection{Generation of Action Potentials}
+\subsection{Generation of Action Potentials}
 
 Action potentials, the transient electrical signals responsible for rapid communication within the nervous system, are generated when the membrane potential depolarizes beyond a certain threshold. This depolarization is initiated by the opening of voltage-gated sodium channels in response to a stimulus. As Na+ ions rush into the cell, the membrane potential becomes more positive, reaching around +40 mV.
 
-\subsubsection{Propagation of Action Potentials}
+\subsection{Propagation of Action Potentials}
 
 Once initiated, the action potential propagates along the axon of the neuron. This propagation occurs through a self-regenerating process where the depolarization of one region of the membrane triggers the opening of voltage-gated sodium channels in the adjacent region, leading to further depolarization. This continues along the length of the axon, allowing the action potential to travel rapidly towards the synapse.
 
-\subsubsection{Repolarization and Hyperpolarization}
+\subsection{Repolarization and Hyperpolarization}
 
 Following depolarization, the membrane potential undergoes repolarization, returning to its resting state. This repolarization is driven by the opening of voltage-gated potassium channels, allowing K+ ions to exit the cell, while voltage-gated sodium channels undergo inactivation. In some cases, repolarization may overshoot, leading to hyperpolarization, before eventually returning to the resting membrane potential\cite{principles_of_neural_science}.
 
-\subsection{Formulation of the Hodgkin-Huxley Model}
+\section{Formulation of the Hodgkin-Huxley Model}
 
 The Hodgkin-Huxley model provides a quantitative description of membrane currents and their role in nerve conduction and excitation. Central to this model is the representation of the neuronal membrane as an electrical circuit, which captures the dynamics of ion flow across the membrane during the generation and propagation of action potentials.
 
@@ -489,7 +433,7 @@ The Hodgkin-Huxley model provides a quantitative description of membrane current
     \label{fig:electrical_circuit_representing membrane.}
 \end{figure}
 
-\subsubsection{Electrical Circuit Representation}
+\subsection{Electrical Circuit Representation}
 
 In the Hodgkin-Huxley model, the neuronal membrane is represented as an electrical circuit composed of several components.
 
@@ -499,7 +443,7 @@ Ion Channels: Voltage-gated ion channels, including sodium (Na+), potassium (K+)
 
 Battery (Em): The battery in the circuit represents the resting membrane potential, which is typically around -60 to -70 mV in neurons. It serves as the reference voltage against which changes in membrane potential are measured.
 
-\subsubsection{The Hodgkin-Huxley Equation}
+\subsection{The Hodgkin-Huxley Equation}
 
 The Hodgkin-Huxley model provides a quantitative description of membrane current and its application to conduction and excitation in nerve cells. It represents the dynamic interplay of ion channels and membrane capacitance in generating and propagating action potentials.
 
@@ -573,7 +517,7 @@ represent the gating variable dynamics.
 These equations describe how the gating variables $m$, $h$, and $n$ change over time in response to changes in membrane potential $V$. They play a crucial role in determining the conductance of sodium and potassium channels, which, in turn, influences the generation and propagation of action potentials in neurons\cite{Hodgkin1952}.
 
 
-\subsection{Python Simulation}
+\section{Python Simulation}
 
 This section presents the results of the simulation using the Hodgkin-Huxley model for different applied external currents. The simulation was conducted to understand the behavior of the neuron in response to varying input stimuli and to validate the model against known physiological phenomena.
 
@@ -696,34 +640,11 @@ to the baseline value after a delay.
 \end{figure}
 
 
+\chapter{Dynamics Of Neuron}
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Applications}
+\chapter{Applications}
 Biological neural network modeling is pushing the technological frontier in every field by simulating biological neural networks, solving real-world challenges, and improving the quality of human life. These applications demonstrate the power of interdisciplinary collaboration, bringing together biology, computer science, engineering and medicine to advance the future of medical technology and technology.
 
 \begin{itemize}
@@ -734,15 +655,17 @@ Biological neural network modeling is pushing the technological frontier in ever
 \end{itemize}
 
 
-
-% 人类通过研究碳基生物制造硅基生物
-
-%----------------------------------------------------------------------------------------
-\clearpage
-\bibliographystyle{unsrt} % This specifies the style of the bibliography
-\bibliography{/Users/dengkai/workspace/papers/latex/config/ref} % This should match the name of your .bib file without the extension
+% \chapter{Citations}
+% \bibliographystyle{unsrt} % This specifies the style of the bibliography
+% \bibliography{/Users/dengkai/workspace/papers/latex/config/ref} % This should match the name of your .bib file without the extension
 
 \begin{thebibliography}{9}
+    \bibitem{Mcculloch1854LOGICALCALCULUSIDEAS} Warren S Mcculloch and Walter Pitts. A LOGICAL CALCULUS OF THEIDEAS IMMANENT IN NERVOUS ACTIVITY. September 1854.
+    \bibitem{Hebb2002OrganizationBehaviorNeuropsychological} D. O. Hebb. The Organization of Behavior: A Neuropsychological Theory. L.Erlbaum Associates, Mahwah, N.J, 2002.
+    \bibitem{BernardWidrow1960AdaptiveSwitchingCircuits} Bernard Widrow and Marcian E. Hoff Jr. Adaptive Switching Circuits. 1960.
+    \bibitem{Rosenblatt1958PerceptronProbabilisticModel} F. Rosenblatt. The perceptron: A probabilistic model for information storage and organization in the brain. Psychological Review, 65(6):386–408,1958.
+    \bibitem{JJHopfield1982NeuralNetworksPhysical} J J Hopfield. Neural networks and physical systems with emergent collective computational abilities. April 1982.33
+    
     \bibitem{Cole1939} Cole, K. S., Curtis, H. J. Electric impedance of the squid giant axon during activity. Journal of General Physiology, 22(5), 649–670 (1939). 
     \url{https://doi.org/10.1085/jgp.22.5.649}
     \bibitem{Hodgkin1939}HODGKIN, A., HUXLEY, A. Action Potentials Recorded from Inside a Nerve Fibre. Nature 144, 710–711 (1939).
@@ -754,6 +677,50 @@ Biological neural network modeling is pushing the technological frontier in ever
     \bibitem{Hausser2000} Häusser, M. The Hodgkin-Huxley theory of the action potential. Nat Neurosci 3 (Suppl 11), 1165 (2000). \url{https://doi.org/10.1038/81426}
     \bibitem{principles_of_neural_science}
     Kandel, E. R., Schwartz, J. H., Jessell, T. M., Siegelbaum, S. A., Hudspeth, A. J. (2014). Principles of Neural Science (5th ed.). McGraw-Hill Education. ISBN: 978-0-07-181001-2.
+
+
+    \bibitem{ref1}
+    S. Ramòn y Cajal (1909). \textit{Histologie du système nerveux de l’homme et des vertébrés}. A. Maloine, Paris.
+
+
+    \bibitem{ref2}
+    Ramón y Cajal S. (1894). The Croonian Lecture: La fine structure des centres nerveux. \textit{Proc. R. Soc. Lond.}, 55, 444--468.
+
+
+    \bibitem{ref3}
+    C. Cherniak, ``Local optimization of neuron arbors,'' \textit{Biol. Cybern.}, vol. 66, pp. 503--510, 1992.
+
+
+
+    \bibitem{ref4}
+    Hodgkin AL, Huxley AF (April 1952). ``Currents carried by sodium and potassium ions through the membrane of the giant axon of Loligo.'' \textit{The Journal of Physiology}, 116 (4): 449–472. 
+
+
+
+    \bibitem{ref5}
+    Chklovskii D.B., Mel B.W., Svoboda K. (2004). Cortical rewiring and information storage. \textit{Nature}, 431, 782--788.
+
+
+    \bibitem{ref6}
+    H. Reichert, \textit{Introduction to Neurobiology}. Oxford University Press, New York, 1992.
+
+
+    \bibitem{ref7}
+    G. Halnes, B. Fath, \& H. Liljenström (2007). The Modified Niche Model: Including Detritus in Simple Structural Food Web Models. \textit{Ecological Modelling}, 208, 9--16.
+
+    \bibitem{ref8}
+    H. Markram, M. Toledo-Rodriguez, Y. Wang, A. Gupta, G. Silberberg, \& C. Wu. 
+    "Interneurons of the neocortical inhibitory system." \textit{Nature Reviews Neuroscience}, 5(10), 793-807, 2004.
+
+    \bibitem{ref9}
+    C. Wiedemann, M. Oswald, S. Stabroth, H. Klinkrad, P. Vörsmann, 
+    ``Mathematical description of the NaK model for MASTER-2005,'' in \textit{Science Direct}, 2005.
+
+    \bibitem{ref10}
+    Bo Deng,
+    ``Numerical Method for Homoclinic and Heteroclinic Orbits of Neuron Models,'' 
+    \textit{Journal of Nonlinear Modeling and Analysis}, 
+    vol. 1, no. 1, pp. 27–45, Mar. 2019, doi:10.12150/jnma.2019.27.
     
 \end{thebibliography}
 
@@ -761,12 +728,10 @@ Biological neural network modeling is pushing the technological frontier in ever
 
 
 
-
+\chapter{Code}
 
 \appendix
 
-
-\section{Python Code}
 
 This code demonstrates the Hodgkin-Huxley model in current clamp experiments and shows action potential propagation.
 
