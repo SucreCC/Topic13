@@ -147,17 +147,13 @@ Signature: Ananthakrishnan Sumedan, Kai Deng, Laurel Dsouza
 
 \chapter{Background Concept}
 \section{Anatomy of a Neuron}
-Neurons are cells — small bodies of mostly water, ions, amino acids and proteins with remarkable electrochemical properties. They are the primary functional units of the brain. Our mental experiences — our perceptions, memories, and thoughts — are the result of the ebb and flow of salts across neural bi-lipid membranes and the synaptic transmissions between neurons. 
+Neurons, the fundamental units of the brain's complex machinery, are comprised mainly of water, ions, amino acids, and proteins, boasting remarkable electrochemical properties. These diminutive entities play a pivotal role in the brain's operations. The core of our cognitive experiences, including our sensory perceptions, memories, and thought processes, stems from the fluid exchange of salts across the neuron's bi-lipid membranes and the synaptic interactions between neurons.
 
-Neurons receive signals from other neurons through synapses located – not exclusively – on their dendritic tree, which is a complex, branching, sprawling structure. If you are wondering what the king of dendritic complexity is, that would be the Purkinje cell, which may receive up to 100,000 other connections. Dendrites are studded with dendritic spines – little bumps where other neurons make contact with the dendrite.
+These neurons receive signals through synapses, which are intricately located along their dendritic trees, extensive structures characterized by their complex branching. A prime example of such complexity is seen in the Purkinje cell, notable for its ability to form up to 100,000 synaptic connections with other neurons. Dendrites, the neuron's signal-receiving extensions, are dotted with dendritic spines. These spines are crucial contact points for synaptic interaction with other neurons.
 
-\vspace{10pt}
-Signals from the dendrites propagate to and converge at the soma – the cell’s body where nucleus and other typical cell organelles live.
+The signals collected by the dendrites are channeled towards, and converge at, the soma, or the cell body. This central part of the neuron contains the nucleus and other standard organelles found in cells, serving as a hub for signal integration.
 
-\vspace{10pt}
-Coming off the soma is the axon hillock which turns into the axon. The axon meets other neurons at synapses. It allows a neuron to communicate rapidly over long distances without losing signal integrity. To allow signals to travel rapidly, the axon is myelinated – it is covered with interspersed insulators which allows the neuron’s signal to jump between insulated sections. To allow the signal to maintain integrity, the neuron signal in the axon is ‘all-or-nothing’ – it is a rather bit-like impulse, which we will discuss next.
-
-
+From the soma, the axon hillock emerges, giving rise to the axon. This structure extends to form connections with other neurons at synapses, enabling rapid signal transmission over long distances without loss of signal quality. Myelination, or the presence of insulating sheaths along the axon, accelerates signal transmission by allowing electrical impulses to hop from one insulated segment to another. This ensures that the signal within the axon remains robust and unaltered, operating on an 'all-or-nothing' basis — a concept we'll explore in more depth moving forward.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{./data/neural.jpg}
@@ -170,17 +166,13 @@ Coming off the soma is the axon hillock which turns into the axon. The axon meet
 
 \section{Physiology of a Neuron}
 
-The second thing to appreciate about neurons is their specialized physiology — that is the cellular functions of neurons. The most striking feature of neural cellular function is the action potential. This is the mechanism which allows neurons to transmit information reliably over long distances without the transmission attenuating.
+Understanding neurons involves delving into their unique physiological properties — their cellular functionalities. The action potential stands out as a critical feature, enabling the transmission of information across extensive distances efficiently, without diminishing the signal's strength.
 
-\vspace{10pt}
-It is important to remember that neurons bathe in an extracellular solution of mostly water, salts and proteins. The forces caused by the movement of salts into and out of the cell and the different concentrations of these salts is the physical basis of the neuron’s remarkable behavior. There are sodium-potassium pumps which move sodium out of the cell and potassium in, so that the concentration of sodium outside the cell is higher than inside and the concentration of potassium outside the cell is lower then inside.
+Neurons exist within an aqueous extracellular environment, rich in salts and proteins. The dynamic exchange of salts entering and exiting the cell, alongside the varying salt concentrations, serve as the foundational mechanism for the neuron's exceptional functions. This process is primarily facilitated by sodium-potassium pumps, which expel sodium from the cell while importing potassium, resulting in a higher concentration of sodium externally and a lower concentration of potassium outside compared to inside the neuron.
 
-\vspace{10pt}
-An action potential is a discrete event in which the membrane potential rapidly rises (depolarizes) and then falls (polarizes). This discrete event is all-or-nothing, meaning that if an action potential occurs at one part of the neurons membrane, it will also occur in the neighboring part, and so on until it reaches the axon terminal. Action potentials do not tend to travel backwards, because, once a section of the membrane has fired an action potential, electrochemical-forces hyper-polarize the region of membrane while the channels which were previously open close and become inactive for some duration of time.
+The phenomenon of the action potential is a distinct, rapid fluctuation of the neuron's membrane potential, characterized by a swift rise (depolarization) followed by a decline (repolarization). This process adheres to an all-or-nothing rule; the occurrence of an action potential in one section of the neuron's membrane triggers a successive wave of potentials along the neuron, culminating at the axon terminal. Notably, action potentials typically do not revert to previous sections as electrochemical forces swiftly hyperpolarize the membrane area post-activation, causing the involved channels to close and temporarily inactivate.
 
-\vspace{10pt}
-The action potential is the result of different species of ions traveling across the cell membrane through channels and the activation and inactivation of those channels on different time scales. A stereotypical action potential occurs as follows:
-
+Action potentials are generated through the orchestrated movement of different ions across the cell's membrane via specific channels, coupled with the channels' timely activation and deactivation. This detailed sequence of events underpins the typical unfolding of an action potential, highlighting the complex ionic interactions and channel dynamics essential for neuronal signaling.
 \begin{figure}[H]
     \centering
     \begin{minipage}[b]{0.45\textwidth}
@@ -203,41 +195,43 @@ The action potential is the result of different species of ions traveling across
 \end{figure}
 
 \begin{itemize}
-    \item \textbf{Equilibrium:} The neuron’s equilibrium membrane potential is near \(-70\) mV — roughly the Nernst Equilibrium of \( E_{K^+} \approx -75 \). At equilibrium, the net current is \(0\) — inward and outward currents are balanced.
-    \item \textbf{Depolarization:} Incoming excitatory signals depolarize the membrane. Quick-to-respond voltage gated \( Na^+ \) channels are activated, and \( Na^+ \) rushes in, pushing the membrane potential higher. Slower-to-respond \( K^+ \) channels open, and \( K^+ \) rushes out, pushing the membrane potential lower.
-    \item \textbf{Amplification:} If the neuron becomes more stimulated or is stimulated rapidly, many more \( Na^+ \) channels are activated than \( K^+ \) channels. This causes a feedback loop where the influx of \( Na^+ \) causes more \( Na^+ \) channels to activate.
-    \item \textbf{Repolarization:} Eventually the membrane potential is near the Nernst Equilibrium of \( Na^+ \) as the sodium channels are maximally open. The slower \( K^+ \) channels catch up to \( Na^+ \), which repolarizes the membrane potential. Meanwhile, the \( Na^+ \) channels become inactive.
-    \item \textbf{Hyper-polarization:} \( K^+ \) channels are open while \( Na^+ \) channels are inactive, causing the membrane potential to dip below its typical equilibrium point, near the \( K^+ \) Nernst equilibrium.
-    \item \textbf{Refractory Period:} The \( Na^+ \) channels, take a while to become deinactivated, meaning after an action potential, they remain incapable of opening again for a period of time. The period in which most \( Na^+ \) channels are called the absolute refractory period (the neuron cannot spike no matter the strength of the stimulus) while the period in which many \( Na^+ \) channels are inactivated is called the relative refractory period (the neuron can spike given a sufficiently strong stimulus).
+    \item \textbf{Equilibrium State:} The resting membrane potential of a neuron hovers around \(-70\) mV, aligning closely with the Nernst equilibrium for \( E_{K^+} \approx -75 \). In this state, there is no net movement of ions, as the influx and efflux of currents are in equilibrium.
+    \item \textbf{Membrane Depolarization:} Excitatory inputs cause the neuron's membrane to depolarize. This triggers the activation of rapid voltage-gated \( Na^+ \) channels, allowing \( Na^+ \) to enter and elevate the membrane potential. Following this, the more lethargic \( K^+ \) channels open, permitting \( K^+ \) to exit and lower the membrane potential.
+    \item \textbf{Signal Amplification:} With increased stimulation, a predominance of \( Na^+ \) channels over \( K^+ \) channels activates, creating a cascade where the entry of \( Na^+ \) prompts further activation of \( Na^+ \) channels.
+    \item \textbf{Membrane Repolarization:} As the membrane potential approaches \( Na^+ \)'s Nernst Equilibrium with sodium channels fully open, the delayed \( K^+ \) channels overtake the \( Na^+ \) dynamics, leading to repolarization. Concurrently, \( Na^+ \) channels enter an inactive state.
+    \item \textbf{Beyond Equilibrium - Hyperpolarization:} With \( K^+ \) channels remaining open while \( Na^+ \) channels are inactivated, the membrane potential momentarily falls below the equilibrium level, nearing the \( K^+ \) Nernst equilibrium.
+    \item \textbf{Period of Refractoriness:} Following an action potential, \( Na^+ \) channels require time to reset, rendering them temporarily non-responsive. This phase, where \( Na^+ \) channels are effectively inoperative, is termed the absolute refractory period, during which no stimulus can provoke a spike. Conversely, the phase where a sufficiently strong stimulus can induce a spike, due to a number of \( Na^+ \) channels being inactivated, is known as the relative refractory period.
 \end{itemize}
-
 
 
 \section{Spike train}
 
-Spike trains are the language of neurons. People tend to think of spikes as point-events and spike trains as point-processe. We describe these with the neural response function:
+Spike train represent the fundamental mode of communication among neurons. Commonly, spikes are conceptualized as instantaneous occurrences, while sequences of spikes are viewed as series of such events. The neural response can be mathematically represented as:
 
 \begin{equation}
     \rho(t) = \sum_{i=1}^{k} \delta(t-t_i)
 \end{equation}
 
-where an impulse is defined as the dirac delta function (which is convenient for counting things):
+Here, the representation utilizes the Dirac delta function to symbolize an impulse, ideal for enumerating discrete events:
 
 \begin{equation}
     \delta(t) = \begin{cases} 1 & \text{if } t = 0, \\ 0 & \text{otherwise} \end{cases}
 \end{equation}
 
-Often, it is useful for analysis to assume spike trains are generated by random processes. Assuming spikes are independent of each other, we can model this point process is a Poisson process, in which we know the probability n spikes occur in the interval $\Delta T$:
+For analytical purposes, it's often presumed that spike trains emanate from stochastic processes. By treating spikes as mutually independent events, one can model these trains through a Poisson process. This model provides the likelihood of observing n spikes within a time interval $\Delta T$:
 
 \begin{equation}
     P\{n \text{ spikes occur in } \Delta t\} = \frac{(rt)^n}{n!} \exp(-rt)
 \end{equation}
 
-To generate spikes according to a Poisson point process, generate a random number r in a sufficiently small time interval, such that only 1 spike should occur, and check whethe $r < firingRate \Delta T$. However, make sure that $firingRate\Delta T < 1$.
+To simulate spikes under a Poisson point process, generate a random value r within a narrowly defined time frame, ensuring the occurrence of no more than one spike, and evaluate if $r < firingRate \Delta T$. It's crucial, however, to ensure that $firingRate\Delta T < 1$.
 
 \section{Biological Neural Networks}
-Biological neural networks are the complex systems of neurons and their connections in organisms, crucial for processing and transmitting information, enabling perception, decision-making, and behavior. Modeling these networks through computational frameworks aims to replicate their structure and function, shedding light on how information processing leads to complex cognitive functions and behaviors. 
-Understanding neurons and neural computation can provide biological inspiration for new ways to process information and for artificial intelligence.
+Biological neural networks constitute intricate arrangements of neurons and their synaptic connections within living organisms, fundamental to the processing and relay of information, facilitating perception, decision-making, and actions. The computational modeling of these networks strives to mimic their architecture and operational principles, offering insights into the mechanisms through which neural processing culminates in elaborate cognitive functions and behaviors. Gaining a deeper comprehension of neuronal functions and the principles of neural computation holds the potential to influence the development of novel information processing systems and advancements in artificial intelligence.
+
+
+
+
 
 
 \chapter{Modelling History}
@@ -247,7 +241,7 @@ Since the Spanish anatomist Cajal founded the neuron theory at the end of the 19
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{./data/M-P.jpg}
+    \includegraphics[width=0.6\textwidth]{./data/M-P.jpg}
     \caption{Schematic diagram of the M-P model of neurons}
     \label{fig:my_picture}
     \vspace{1pt} % Vertical space, optional
