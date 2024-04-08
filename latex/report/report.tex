@@ -174,7 +174,7 @@ Neurons exist within an aqueous extracellular environment, rich in salts and pro
 
 The phenomenon of the action potential is a distinct, rapid fluctuation of the neuron's membrane potential, characterized by a swift rise (depolarization) followed by a decline (repolarization) \cite{HumanAnatomyAndPhysiology}. This process adheres to an all-or-nothing rule; the occurrence of an action potential in one section of the neuron's membrane triggers a successive wave of potentials along the neuron, culminating at the axon terminal. Notably, action potentials typically do not revert to previous sections as electrochemical forces swiftly hyperpolarize the membrane area post-activation, causing the involved channels to close and temporarily inactivate.
 
-Action potentials are generated through the orchestrated movement of different ions across the cell's membrane via specific channels, coupled with the channels' timely activation and deactivation. This detailed sequence of events underpins the typical unfolding of an action potential, highlighting the complex ionic interactions and channel dynamics essential for neuronal signaling.
+Action potentials are generated through the orchestrated movement of different ions across the cell's membrane via specific channels, coupled with the channels' timely activation and deactivation \cite{MysteriesOfTheActionPotential}. This detailed sequence of events underpins the typical unfolding of an action potential, highlighting the complex ionic interactions and channel dynamics essential for neuronal signaling.
 \begin{figure}[H]
     \centering
     \begin{minipage}[b]{0.45\textwidth}
@@ -208,7 +208,7 @@ Action potentials are generated through the orchestrated movement of different i
 
 \section{Spike train}
 
-Spike train represent the fundamental mode of communication among neurons. Commonly, spikes are conceptualized as instantaneous occurrences, while sequences of spikes are viewed as series of such events. The neural response can be mathematically represented as:
+Spike train represent the fundamental mode of communication among neurons \cite{SpikeTrains}. Commonly, spikes are conceptualized as instantaneous occurrences, while sequences of spikes are viewed as series of such events. The neural response can be mathematically represented as:
 
 \begin{equation}
     \rho(t) = \sum_{i=1}^{k} \delta(t-t_i)
@@ -229,7 +229,7 @@ For analytical purposes, it's often presumed that spike trains emanate from stoc
 To simulate spikes under a Poisson point process, generate a random value r within a narrowly defined time frame, ensuring the occurrence of no more than one spike, and evaluate if $r < firingRate \Delta T$. It's crucial, however, to ensure that $firingRate\Delta T < 1$.
 
 \section{Biological Neural Networks}
-Biological neural networks constitute intricate arrangements of neurons and their synaptic connections within living organisms, fundamental to the processing and relay of information, facilitating perception, decision-making, and actions. The computational modeling of these networks strives to mimic their architecture and operational principles, offering insights into the mechanisms through which neural processing culminates in elaborate cognitive functions and behaviors. Gaining a deeper comprehension of neuronal functions and the principles of neural computation holds the potential to influence the development of novel information processing systems and advancements in artificial intelligence.
+Biological neural networks constitute intricate arrangements of neurons and their synaptic connections within living organisms, fundamental to the processing and relay of information, facilitating perception, decision-making, and actions. The computational modeling of these networks strives to mimic their architecture and operational principles, offering insights into the mechanisms through which neural processing culminates in elaborate cognitive functions and behaviors. Gaining a deeper comprehension of neuronal functions and the principles of neural computation holds the potential to influence the development of novel information processing systems and advancements in artificial intelligence \cite{CurrentBiology}.
 
 
 
@@ -758,9 +758,14 @@ Biological neural network modeling is pushing the technological frontier in ever
 % \bibliography{/Users/dengkai/workspace/papers/latex/config/ref} % This should match the name of your .bib file without the extension
 
 \begin{thebibliography}{9}
+   
     \bibitem{EpithelialSodiumTransport}  Rossier, B. C., Baker, M. E., and Studer, R. A. (2015). Epithelial sodium transport and its control by aldosterone: the story of our internal environment revisited. Physiological Reviews, 95(1), 297-340. https://doi.org/10.1152/physrev.00011.2014
     \bibitem{MolecularCellBiology}  Lodish, H; Berk, A; Kaiser, C; Krieger, M; Bretscher, A; Ploegh, H; Amon, A (2000). Molecular Cell Biology (7th ed.). New York, NY: W. H. Freeman and Company. p. 695.
     \bibitem{HumanAnatomyAndPhysiology}  Marieb, E. N., and Hoehn, K. (2014). Human anatomy and physiology. San Francisco, CA: Pearson Education Inc.
+    \bibitem{MysteriesOfTheActionPotential} A. Johnson and W. Winlow, “Mysteries of the action potential,” Physiology News, no. Summer 2018, pp. 38–41, Jul. 2018, doi: https://doi.org/10.36866/pn.111.38.
+    \bibitem{SpikeTrains}Păun, G., Pérez–Jiménez, M. J., and Rozenberg, G. (2006). Spike trains in spiking neural p systems. International Journal of Foundations of Computer Science, 17(04), 975-1002. https://doi.org/10.1142/s0129054106004212
+    \bibitem{CurrentBiology} Bardwell, L. (2020). Cancer mutations: molecular mekanisms. Current Biology, 30(5), R222-R224. https://doi.org/10.1016/j.cub.2020.01.039
+
 
     \bibitem{Mcculloch1854LOGICALCALCULUSIDEAS} Warren S Mcculloch and Walter Pitts. A LOGICAL CALCULUS OF THEIDEAS IMMANENT IN NERVOUS ACTIVITY. September 1854.
     \bibitem{Hebb2002OrganizationBehaviorNeuropsychological} D. O. Hebb. The Organization of Behavior: A Neuropsychological Theory. L.Erlbaum Associates, Mahwah, N.J, 2002.
