@@ -648,7 +648,6 @@ to the baseline value after a delay.
     \label{fig:conductances_0_6uA}
 \end{figure}
 
-
 \chapter{Dynamics Of Neuron}
 
 \section{Elements of Neuronal Systems}
@@ -657,39 +656,67 @@ Various types of neurons can be distinguished by the shape of their cell bodies 
 
 % Your figure code with the H specifier to force placement here
 \begin{figure}[H]
-\centering % Centers the figure
-\fbox{% Adds a border to the figure
-  \includegraphics[width=0.8\textwidth]{./data/drawing.png} % Adjusts the size
-}
-\caption{A drawing of Ramón y Cajal showing a few neurons in the mammalian cortex \cite{ref2}} 
+    \centering % Centers the figure
+    \fbox{% Adds a border to the figure
+      \includegraphics[width=0.8\textwidth]{./data/drawing.png} % Adjusts the size
+    }
+    \caption{A drawing of Ramón y Cajal showing a few neurons in the mammalian cortex \cite{ref2}.}
 \end{figure}
+    
+    
+The illustration reveals various neurons with distinct cell bodies and elongated projections, providing a snapshot of the densely woven neuronal networks in the cortex. In reality, the cortex’s neuronal networks are even more elaborate. However, neurons are not the sole constituents of the cortex. It also comprises a multitude of glial cells, which play a supportive role in the brain’s energy management and structural integrity \cite{ref2}.
 
-The illustration reveals various neurons with distinct cell bodies and elongated projections, providing a snapshot of the densely woven neuronal networks in the cortex. In reality, the cortex’s neuronal networks are even more elaborate, with over 10,000 neuron cell bodies and extensive wiring in just one cubic millimeter. However, neurons are not the sole constituents of the cortex. It also comprises a multitude of glial cells, which play a supportive role in the brain’s energy management and structural integrity \cite{ref2}. 
+\vspace{12pt}
 
-When considering the physiology of neurons, it is important to note that their internal potential at rest is typically negative in comparison to their surroundings, often around -70mV. This negative resting potential is established by the combined action of various gating mechanisms, ion pumps, and ion channels present in the cell membrane \cite{ref3}. However, when the neuron's resting potential is perturbed beyond a certain level, such as due to input from other neurons, the ion channels in the membrane open and close in a coordinated manner to allow mainly ionic sodium and potassium (but also calcium and chloride) to pass through the membrane, resulting in a rapid and sharp change in potential. This sudden change generates a stereotyped pulse, or action potential, which travels along the axon of the neuron in an all-or-nothing manner, meaning that it is either fired with full amplitude or not fired at all.
+When considering the physiology of neurons, it is important to note that their internal potential at rest is typically negative in comparison to their surroundings, often around -70$mV$. This negative resting potential is established by the combined action of various gating mechanisms, ion pumps, and ion channels present in the cell membrane \cite{ref3}. However, when the neuron's resting potential is perturbed beyond a certain level, such as due to input from other neurons, the ion channels in the membrane open and close in a coordinated manner to allow mainly ionic sodium and potassium (but also calcium and chloride) to pass through the membrane, resulting in a rapid and sharp change in potential. This sudden change generates a stereotyped pulse, or action potential, which travels along the axon of the neuron in an all-or-nothing manner, meaning that it is either fired with full amplitude or not fired at all.
 
-The Hodgkin and Huxley model, developed over 50 years ago, provides a detailed description of a single neuron as a modified electrical circuit that transports electrical signals \cite{ref4}. This model explains how a single cell can regulate flows of ions through its cell membrane to rapidly depolarize and re-polarize itself, allowing for the generation of action potentials that become outputs to other neurons. In the human brain, which consists of approximately \(10^{11}\) neurons and \(10^{15}\) connections, neurons work as summing devices that sum up all their inputs, and depending on whether this sum reaches a certain threshold, respond by generating action potentials that become outputs to other neurons \cite{ref5}. These inputs may be either excitatory or inhibitory, resulting in an increase or decrease in the probability of the receiver neuron firing a response signal.
 
-The brain processes information mainly by transmitting electric signals (action potentials) between millions of neurons across nerve fibers, with most modeling approaches considering only a subset of these. The fundamental questions in understanding the brain deal with how the activity of high numbers of interconnected neurons gives rise to a global activity pattern that is related to the function of the brain.
+\vspace{12pt}
+The Hodgkin and Huxley model, developed over 50 years ago, provides a detailed description of a single neuron as a modified electrical circuit that transports electrical signals \cite{ref4}. This model explains how a single cell can regulate flows of ions through its cell membrane to rapidly depolarize and re-polarize itself, allowing for the generation of action potentials that become outputs to other neurons. The human brain is an incredibly complex organ, comprised of roughly \(10^{11}\) neurons and \(10^{15}\) connections. Each neuron functions as a summing device, processing all of its inputs and responding with action potentials that travel to other neurons, provided a certain threshold is met \cite{ref5}. These inputs may be either excitatory or inhibitory, resulting in an increase or decrease in the probability of the receiver neuron firing a response signal.
+\vspace{12pt}
 
+The brain processes information mainly by transmitting electric signals (action potentials) between millions of neurons across nerve fibers, with most modeling approaches considering only a subset of these. The brain's fundamental questions revolve around how interconnected neurons' activity creates global activity patterns that are linked to brain function.
 
 \begin{figure}[H]
     \centering % Centers the figure
     \fbox{% Adds a border to the figure
       \includegraphics[width=0.8\textwidth]{./data/neuron.png} % Adjusts the size
     }
-    \caption[A: A simple sketch of two neurons connected by a chemical synapse; B: A sketch of a chemical synapse]{\textbf{A:} A simple sketch of two neurons connected by a chemical synapse; \\ \textbf{B:} A sketch of a chemical synapse} 
+    \caption[A: A simple sketch of two neurons connected by a chemical synapse; B: A sketch of a chemical synapse]{\textbf{A:} A simple sketch of two neurons connected by a chemical synapse; \\ \textbf{B:} A sketch of a chemical synapse.} 
 \end{figure}
     
 The brain adapts to environmental events and changes at three different time scales  \cite{ref6}. At the longest time scale, genetic adaptation results in a hard-wired connectivity of the neural network. At an intermediate time scale, the central nervous system adapts through numerous plastic mechanisms, forming assemblies of highly interacting and functionally associated neurons. Finally, at the shortest time scale, highly temporal changes in the neural activity are associated with the short-term states of the brain, which are closely related to cognitive processes \cite{ref7}.
 
-
 \section{Neuron dynamics}
 The human nervous system is composed of billions of individual nerve cells called neurons. Each neuron has a distinct structure that can be divided into segments such as the cell body, axon, and dendrites. The cell body contains the nucleus and other organelles that are essential for the neuron's proper functioning. The axon is a long, slender extension that carries electrical signals away from the cell body to other neurons or muscle cells. The dendrites are shorter, branched extensions that receive signals from other neurons and transmit them to the cell body. 
 
+\vspace{12pt}
+
 These different segments of the neuron work together to propagate action potentials, which are brief electrical impulses that allow neurons to communicate with one another. The interaction between the segments can be described as autonomous nonlinear systems, meaning that they operate independently and can exhibit complex, nonlinear behavior \cite{ref7}. These systems are crucial to the proper functioning of the nervous system, allowing us to perceive, process, and respond to the world around us.
 \subsection{The Fitzhugh–Nagumo model}
-The Fitzhugh-Nagumo model is a simplified mathematical representation of the neural dynamics of a neuron. It is essentially a third-order limit-cycle oscillator, which is characterized by the presence of two variables: the membrane potential V and the activation parameter n. The model exhibits different types of behavior depending on the control parameter a. Specifically, the system can display either stable fixed-point behavior or limit cycles. This model can shows table fixed-point behavior (Figs. 5.3(a) and (d)) or limit cycles (Figs. 5.3(c) and 3(d)), depending on the value of the control parameter. 
+The Fitzhugh-Nagumo model is a simplified mathematical representation of the neural dynamics of a neuron. It is essentially a third-order limit-cycle oscillator, which is characterized by the presence of two variables: the membrane potential $V$ and the recovery variable $n$. 
+
+\vspace{12pt}
+The FitzHugh-Nagumo model equations are given by:
+
+
+%\documentclass{article}
+%\usepackage{amsmath}
+\begin{equation}
+    \frac{dV}{dt} = V - \frac{V^3}{3} - n + I_{\text{ext}}
+\end{equation}
+    
+
+\begin{equation}
+\frac{dn}{dt} = \varepsilon(V + a - bn)
+\end{equation}
+
+where $V$ is the membrane potential, $n$ is the recovery variable.
+$a$,$b$ and \textit{$\epsilon$} are parameters. $I_{\text{ext}}$ is the external current or input to neuron.
+
+\vspace{12pt}
+
+The model exhibits different types of behavior depending on the control parameter $a$. Specifically, the system can display either stable fixed-point behavior or limit cycles. This model can show table fixed-point behavior (Figs. 5.3(a) and (d)) or limit cycles (Figs. 5.3(c) and 3(d)), depending on the value of the control parameter. 
 
 
 \begin{figure}[H]
@@ -697,15 +724,33 @@ The Fitzhugh-Nagumo model is a simplified mathematical representation of the neu
     \fbox{% Adds a border to the figure
       \includegraphics[width=0.8\textwidth]{./data/Fitzmodel.png} % Adjusts the size
     }
-    \caption{Examples of the Fitzhugh–Nagumo model. The graph shows the membrane potential V on the horizontal axis and the activation parameter n on the vertical axis. The nullclines are plotted for n and V for I = 0. For a = +0.1, there is a stable fixed point in (a), while in (b) and (c) there are limit cycles representing neural spiking. In (d) for a = -0.67, the system converts back to a stable fixed point. \cite{ref8}} 
+    \caption{Examples of the Fitzhugh-Nagumo model. The graph shows the membrane potential $V$ on the horizontal axis and the activation parameter $n$ on the vertical axis. The nullclines are plotted for $n$ and $V$ for $I$ = 0. For $a$ = +0.1, there is a stable fixed point in (a), while in (b) and (c) there are limit cycles representing neural spiking. In (d) for $a$ = -0.67, the system converts back to a stable fixed point \cite{ref8}.} 
 \end{figure}
     
 When the stimulus is weak, the system is at a stable fixed point. In other words, it remains in a steady state, with the membrane potential and activation parameter both maintaining constant values. However, as the strength of the stimulus increases, the system undergoes a transition from resting potential to spiking. This means that the neuron starts to generate action potentials, which are brief but large electrical impulses that propagate along its axon and enable it to communicate with other neurons. The frequency and amplitude of these spikes can vary depending on the strength and duration of the stimulus\cite{ref8}. Overall, the Fitzhugh-Nagumo model provides a useful framework for understanding the basic mechanisms of neural activity and how they can be modulated by external inputs.
-    
-\subsection{The NaK model}
-The NaK model is a sophisticated mathematical representation that illuminates the intricacies of two-dimensional phase planes. Its intriguing dynamics are contingent upon the bias current I, which can result in complex patterns of bistability and bifurcations. As a result, this model is highly useful for delving deeper into the parameter space and comprehending the diverse range of behaviors that it can exhibit. One of the interesting features of the NaK model is its ability to display bistability, which is an important aspect of neurodynamics. 
 
+
+\subsection{The NaK model}
+The NaK model (Sodium-Potassium model) is a sophisticated mathematical representation that illuminates the intricacies of two-dimensional phase planes. Its intriguing dynamics are contingent upon the bias current $I$, which can result in complex patterns of bistability and bifurcations. 
+
+\begin{equation}
+C\frac{dV}{dt} = I - g_{\text{L}}(V - E_{\text{L}}) - g_{\text{Na}}m_{\infty}(V)(V - E_{\text{Na}}) - g_{\text{K}}n(V - E_{\text{K}})
+\end{equation}
+
+
+\begin{equation}
+\frac{dn}{dt} = \frac{n_{\infty}(V) - n}{\tau(V)}
+\end{equation}
+
+where $C$ is the membrane capacitance, $V$ is the membrane potential, $g_{L}
+$ is the leak conductance, $E_{L}$ is the leak reverse potential, $g_{Na}$ is sodium conductance, $E_{Na}$ is sodium reverse potential. $I$ is the applied current, $\tau(V)$ is the time constant, $n_{\infty}(V)$ is the steady-state value of gating variable and $m_{\infty}(V)$ is the steady-state value of sodium channel activation parameter.
+
+\vspace{12pt}
+This model is highly useful for delving deeper into the parameter space and comprehending the diverse range of behaviors that it can exhibit. One of the interesting features of the NaK model is its ability to display bistability, which is an important aspect of neurodynamics. 
+
+\vspace{12pt}
 When a transient pulse is applied to the system, it can cause the system to cross the separatrix into the region where the dynamics relax onto the limit cycle. Once the system is on the limit cycle, it persists in a continuous oscillation. This type of behavior is characteristic of many biological systems, and the NaK model is a useful tool for studying and understanding these dynamics \cite{ref9}. The NaK model can display bifurcations as well as bistability. It allows a neuron to spike continuously even after the stimulus has been removed. 
+\vspace{12pt}
 
 When a short-lived pulse is introduced and then promptly withdrawn, it can elicit a response from the system that leads it to cross the separatrix and enter a state of sustained oscillation along a limit cycle \cite{ref10}. This phenomenon is illustrated in Fig. 5.4, and is observed in the NaK model when exposed to a current pulse of brief duration.
 
@@ -715,30 +760,33 @@ When a short-lived pulse is introduced and then promptly withdrawn, it can elici
     \fbox{% Adds a border to the figure
       \includegraphics[width=0.8\textwidth]{./data/nak1.png} % Adjusts the size
     }
-    \caption{Streamlines for the NaK model, show bistability\cite{ref9}} 
+    \caption{Streamlines for the NaK model, show bistability \cite{ref9}.} 
 \end{figure}
-    
     
 Fig. 5.5 displays the phase diagram of the NaK model, which illustrates the situation where the stable node and the saddle point merge into a single saddle point. At this point, the limit cycle becomes a homoclinic orbit with an infinite period. This type of bifurcation is referred to as a saddle bifurcation, which can also be called a fold or a tangent bifurcation. In the NaK model, the harmonic orbit is connected to the saddle point.
-    
+
 
 \begin{figure}[H]
-    \centering % Centers the figure
-    \fbox{% Adds a border to the figure
-      \includegraphics[width=0.8\textwidth]{./data/fig5.png} % Adjusts the size
-    }
-    \caption{A homoclinic orbit in the NaK model connected to the saddle point.\cite{ref9}} 
+\centering % Centers the figure
+\fbox{% Adds a border to the figure
+  \includegraphics[width=0.8\textwidth]{./data/fig5.png} % Adjusts the size
+}
+\caption{A homoclinic orbit in the NaK model connected to the saddle point \cite{ref9}.} 
 \end{figure}
-    
-Finally, the membrane potential for a trajectory close to the homoclinic orbit is demonstrated in Fig. 5.6. During the rapid traversal of the orbit, the membrane potential undergoes a quick change, and this is followed by a slow approach to the saddle point. This slow approach leads to a characteristic spiking appearance of the membrane potential. The spiking pattern is a result of the slow approach to the saddle, which causes the membrane potential to oscillate back and forth \cite{ref10}. These oscillations are responsible for the spiking appearance of the membrane potential.
+
+Finally, the membrane potential for a trajectory close to the homoclinic orbit is demonstrated in Fig. 5.6. 
 
 \begin{figure}[H]
     \centering % Centers the figure
     \fbox{% Adds a border to the figure
       \includegraphics[width=0.8\textwidth]{./data/Fig6.png} % Adjusts the size
     }
-    \caption{Membrane potential for an orbit near the homoclinic orbit as a time function.\cite{ref10}} 
+    \caption{Membrane potential for an orbit near the homoclinic orbit as a time function \cite{ref10}.}
 \end{figure}
+    
+During the rapid traversal of the orbit, the membrane potential undergoes a quick change, and this is followed by a slow approach to the saddle point. This slow approach leads to a characteristic spiking appearance of the membrane potential. The spiking pattern is a result of the slow approach to the saddle, which causes the membrane potential to oscillate back and forth \cite{ref10}. These oscillations are responsible for the spiking appearance of the membrane potential.
+    
+
 
 
 
